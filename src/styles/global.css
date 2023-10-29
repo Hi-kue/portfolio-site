@@ -1,0 +1,64 @@
+/* Global CSS styles */
+@font-face {
+    font-family: 'Stardom-Regular';
+    src: url('../fonts/Stardom-Regular.woff2') format('woff2'),
+        url('../fonts/Stardom-Regular.woff') format('woff'),
+        url('../fonts/Stardom-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Satoshi-Medium';
+    src: url('../fonts/Satoshi-Medium.woff2') format('woff2'),
+        url('../fonts/Satoshi-Medium.woff') format('woff'),
+        url('../fonts/Satoshi-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+}
+
+
+
+@font-face {
+    font-family: 'Satoshi-Bold';
+    src: url('../fonts/Satoshi-Bold.woff2') format('woff2'),
+        url('../fonts/Satoshi-Bold.woff') format('woff'),
+        url('../fonts/Satoshi-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Satoshi-Black';
+    src: url('../fonts/Satoshi-Black.woff2') format('woff2'),
+        url('../fonts/Satoshi-Black.woff') format('woff'),
+        url('../fonts/Satoshi-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-display: swap;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --text: #837575;
+    --background: #15141e;
+    --primary: #f0e2c5;
+    --secondary: #daaaaa;
+    --accent: #695a5a;
+
+
+    --background-font: "SeariderFalcon3DItalic", sans-serif;
+    --stardom-font: "Stardom-Regular", sans-serif;
+    --satoshi-bold-font: "Satoshi-Bold", sans-serif;
+    --satoshi-medium-font: "Satoshi-Medium", sans-serif;
+    --satoshi-black-font: "Satoshi-Black", sans-serif;
+}
