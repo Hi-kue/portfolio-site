@@ -4,7 +4,6 @@
 
 
 ## Project Structure
-
 ```
 .
 ├── .vscode
@@ -47,22 +46,27 @@ If you want to run the application locally, you can use the following set of com
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
 | `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run dev`             | Starts local dev server at `localhost:3000`      |
 | `npm run build`           | Build your production site to `./dist/`          |
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
+However, using npm run dev, build, preview is counterproductive. Instead, use the following commands:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm start`               | Starts local dev server at `localhost:3000`      |
+| `npm build`               | Build your production site to `./dist/`          |
+
 ## TODOs
-
-
-- [ ] Add a `404.astro` page
-- [ ] Add a `sitemap.xml` file
+- [x] Add a `404.astro` page
 - [ ] Add nav sections to `Layout.astro`
 - [ ] Create Hero, Footer, Header, and Block Components
   - [ ] Hero Section Must Have
     - [ ] Hero Title
-    - [ ] Hero Spline 3D Animation or Effect
+    - [ ] Hero ThreeJS Animation or Effect
     - [ ] Hero Subtitle
     - [ ] Here CTA Button
 - [ ] Block Section Must Have
@@ -70,7 +74,7 @@ If you want to run the application locally, you can use the following set of com
   - [ ] Block Subtitle (Optional)
   - [ ] Cards (Optional)
   - [ ] Block CTA Button (Optional)
-  - [ ] Block Spline 3D Animation or Effect (Optional)
-- [ ] Configure Spline 3D with `astro add`
-- [ ] Configure Tailwind CSS with `astro add` (Optional)
-- [ ] Configure TypeScript with `astro add` (Optional)
+  - [ ] Block ThreeJs Animation or Effect (Optional)
+- [ ] Configure ThreeJS with `astro add`
+- [x] Configure Tailwind CSS with `astro add` (Optional)
+- [x] Configure TypeScript with `astro add` (Optional)
