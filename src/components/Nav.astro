@@ -1,5 +1,12 @@
 ---
+interface Props {
+    children?: React.ReactNode;
+    className?: string;
+    id?: string;
+    isTranslucent: boolean;
+}
 
+const { children, className, id, isTranslucent } = Astro.props;
 ---
 
 <!-- TODO: HTML For :: Nav.astro + TailwindCSS -->

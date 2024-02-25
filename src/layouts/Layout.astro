@@ -1,26 +1,60 @@
 ---
+import Nav from 'src/components/Nav.astro';
+import BaseHead from '../components/BaseHead.astro';
+
 interface Props {
-	title: string;
+	title?: string;
+	charset?: string;
+	keywords?: string;
+	description?: string;
+	iconlink?: string;
 }
 
-const { title } = Astro.props;
+const { 
+	title,
+	charset,
+	keywords,
+	description,
+	iconlink
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<BaseHead
+			title={title}
+			charset={charset}
+			keywords={keywords}
+			description={description}
+			iconlink={iconlink}
+		/>
 	</head>
 	<body>
+		<!-- TODO: A Bunch of TODOs Here... -->
+		<Nav 
+			className="TODO"
+			id="TODO"
+			isTranslucent={true}
+		/>
 		<slot />
 	</body>
 </html>
+
 <style is:global>
+	/**
+		Custom Properties to Implement
+		--accent: ?
+		--accent-light: ?
+		--accent-dark: ?
+		--accent-gradient: ?
+		--primary: ?
+		--secondary: ?
+		--tertiary: ?
+		--stock-black: ?
+		--stock-white: ?
+		--stock-gray: ?
+	*/
 	:root {
 		--accent: 136, 58, 234;
 		--accent-light: 224, 204, 250;

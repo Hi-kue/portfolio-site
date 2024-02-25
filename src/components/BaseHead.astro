@@ -1,0 +1,19 @@
+---
+interface Props {
+    title?: string;
+    charset?: string;
+    keywords?: string;
+    description?: string;
+    iconlink?: string;
+}
+
+const { title, charset, keywords, description, iconlink } = Astro.props; 
+---
+
+<meta charset={charset} />
+<meta name="description" content={description} />
+<meta name="viewport" content="width=device-width" />
+<link rel="icon" type="image/svg+xml" href={iconlink} />
+<meta name="generator" content={Astro.generator} />
+<meta name="keywords" content={keywords} />
+<title>{title}</title>
