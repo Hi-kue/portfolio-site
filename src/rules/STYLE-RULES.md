@@ -3,7 +3,6 @@
 This document describes the overall styles and rule sets to follow when defining HTML elements, 
 CSS classes, naming conventions for CSS classes, fonts to use, and other styling rules.
 
-
 ## Fonts
 
 Fonts that are being used for the personal website include:
@@ -30,6 +29,9 @@ Pre-read:
   - `<section>` : For sections of content containing cards, articles, etc.
   - `<summary>` : For the summary of a `<details>` element.
   - `<time>` : For dates and times.
+
+**NOTE**: Using semantic HTML elements will help with SEO and accessibility, although extreme for a portolfio website, it is good practice.
+
 
 ## Overall Website Appeal
 

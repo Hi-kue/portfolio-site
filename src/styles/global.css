@@ -1,4 +1,7 @@
-/* Global CSS styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
     font-family: 'Stardom-Regular';
     src: url('../fonts/Stardom-Regular.woff2') format('woff2'),
