@@ -1,5 +1,11 @@
 ---
+interface Props {
+    error?: string;
+    errorDescription?: string;
+    default404: boolean;
+}
 
+const { error, errorDescription, default404 } = Astro.props;
 ---
 
-<!-- TODO: HTML For :: 404.astro + TailwindCSS --> 
+<!-- TODO: Complete 404.astro --> 

@@ -6,10 +6,22 @@
     "src/**/*.astro"
   ],
   "compilerOptions": {
-    "jsx": "react",
+    "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "astro/*": ["./src/astro/*"]
-    }
+      "astro/*": [
+        "./src/astro/*"
+      ],
+      "@/*": [
+        "src/*"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@aceternityui/*": [
+        "src/components/react/*"
+      ]
+    },
+    "jsxImportSource": "react"
   }
 }

@@ -1,5 +1,9 @@
 ---
-import Nav from 'src/components/Nav.astro';
+import type { GetStaticPaths } from "astro";
+import {
+	DEF_CHARSET,
+	DEF_TITLE,
+} from 'src/consts';
 import BaseHead from '../components/BaseHead.astro';
 
 interface Props {
@@ -11,16 +15,22 @@ interface Props {
 }
 
 const { 
-	title,
-	charset,
 	keywords,
 	description,
-	iconlink
+	iconlink,
+	title = DEF_TITLE,
+	charset = DEF_CHARSET,
 } = Astro.props;
+
+
+export const getStaticPaths = (() => {
+	return [];
+}) satisfies GetStaticPaths;
+
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
 	<head>
 		<BaseHead
 			title={title}
@@ -30,32 +40,67 @@ const {
 			iconlink={iconlink}
 		/>
 	</head>
-	<body>
-		<!-- TODO: A Bunch of TODOs Here... -->
-		<Nav 
-			className="TODO"
-			id="TODO"
-			isTranslucent={true}
-		/>
+	<body class="min-h-screen">
 		<slot />
 	</body>
 </html>
 
 <style is:global>
-	/**
-		Custom Properties to Implement
-		--accent: ?
-		--accent-light: ?
-		--accent-dark: ?
-		--accent-gradient: ?
-		--primary: ?
-		--secondary: ?
-		--tertiary: ?
-		--stock-black: ?
-		--stock-white: ?
-		--stock-gray: ?
-	*/
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
+	@font-face {
+		font-family: 'Stardom-Regular';
+		src: url('../fonts/Stardom-Regular.woff2') format('woff2'),
+			url('../fonts/Stardom-Regular.woff') format('woff'),
+			url('../fonts/Stardom-Regular.ttf') format('truetype');
+		font-weight: 400;
+		font-display: swap;
+		font-style: normal;
+	}
+
+
+	@font-face {
+		font-family: 'Satoshi-Medium';
+		src: url('../fonts/Satoshi-Medium.woff2') format('woff2'),
+			url('../fonts/Satoshi-Medium.woff') format('woff'),
+			url('../fonts/Satoshi-Medium.ttf') format('truetype');
+		font-weight: 500;
+		font-display: swap;
+		font-style: normal;
+	}
+
+
+
+	@font-face {
+		font-family: 'Satoshi-Bold';
+		src: url('../fonts/Satoshi-Bold.woff2') format('woff2'),
+			url('../fonts/Satoshi-Bold.woff') format('woff'),
+			url('../fonts/Satoshi-Bold.ttf') format('truetype');
+		font-weight: 700;
+		font-display: swap;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'Satoshi-Black';
+		src: url('../fonts/Satoshi-Black.woff2') format('woff2'),
+			url('../fonts/Satoshi-Black.woff') format('woff'),
+			url('../fonts/Satoshi-Black.ttf') format('truetype');
+		font-weight: 900;
+		font-display: swap;
+		font-style: normal;
+	}
+
 	:root {
+		--color-hurricane: #837575;
+		--color-cinder: #15141E;
+		--color-almond: #F0E2C5;
+		--color-copper_rust: #A24747;
+		--color-zambezi: #695A5A;
 		--accent: 136, 58, 234;
 		--accent-light: 224, 204, 250;
 		--accent-dark: 49, 10, 101;
@@ -65,9 +110,17 @@ const {
 			rgb(var(--accent-light)) 30%,
 			white 60%
 		);
+
+
+		--background-font: "SeariderFalcon3DItalic", sans-serif;
+		--stardom-font: "Stardom-Regular", sans-serif;
+		--satoshi-bold-font: "Satoshi-Bold", sans-serif;
+		--satoshi-medium-font: "Satoshi-Medium", sans-serif;
+		--satoshi-black-font: "Satoshi-Black", sans-serif;
 	}
+
 	html {
-		font-family: system-ui, sans-serif;
+		font-family: var(--satoshi-medium-font);
 		background: #13151a;
 		background-size: 224px;
 	}
@@ -76,18 +129,15 @@ const {
 		margin: 0;
 		padding: 0;
 		background-size: 30px 30px;
-		background-image: radial-gradient(
-			circle,
-			#474747 0.5px,
-			rgba(0, 0, 0, 0) 0.5px
-		);
+		background-image: var(--color-cinder);
 		z-index: -100;
 		width: 100vw;
 		height: 100vh;
 		background-repeat: repeat;
 	}
+
 	code {
-		font-family:
+		font-family: 
 			Menlo,
 			Monaco,
 			Lucida Console,
